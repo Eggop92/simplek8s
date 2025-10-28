@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels: #Es la forma de conectar los servicios con el pod
+    component: web
+spec:
+  containers:
+    - name: client
+      image: stephengrider/multi-worker
+      ports:
+        - containerPort: 9999
